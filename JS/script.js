@@ -38,3 +38,14 @@ const nextSlide = () => {
     }
     updateSlidePosition()
 }
+
+const downArrow = document.getElementById('sidebar-down-arrow')
+const sideBar = document.getElementById('side-bar')
+const leftArrow = document.getElementById('sidebar-left-arrow')
+
+downArrow.addEventListener('click', () => {
+    sideBar.style.display = 'block'
+})
+leftArrow.addEventListener('click', () => {
+    sideBar.style.display = 'none'
+})

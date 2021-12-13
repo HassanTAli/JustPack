@@ -41,6 +41,23 @@ header {
 .navbar img {
   height: 4em;
 }
+
+.arrow {
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  padding: 3px;
+  margin: 0 0 25px 5px;
+  cursor: pointer;
+  display:none;
+}
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
 .navbar li {
   list-style-type: none;
 }
@@ -370,7 +387,31 @@ header {
   flex-direction: row;
   justify-content: space-between;
 }
-
+.side-bar {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #36454F;
+  color: #66AAFF;
+  width: 300px;
+  padding: 20px;
+  display: none;
+}
+.side-bar .arrow-sidebar {
+  margin: 0 0 30px;
+}
+.side-bar a {
+  text-decoration: none;
+  color: white;
+}
+.side-bar hr {
+  margin: 25px 0 0 0;
+}
+.side-bar nav ul li{
+  padding: 20px 0;
+  list-style: none;
+}
 @keyframes fadeVisibility {
   0% {
     opacity: 0;
@@ -393,5 +434,21 @@ header {
   }
   .contact .social-contact {
     margin-top: 50px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .navbar nav {
+    display: none;
+  }
+  .arrow{
+    display: inline-block;
+  }
+  .checkout-from {
+    flex-direction: column;
+    align-items: center;
+  }
+  .checkout-from .checkout {
+    margin: 15px 0;
   }
 }
