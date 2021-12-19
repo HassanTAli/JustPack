@@ -6,6 +6,11 @@ const totalSlides = slides.length
 const prev = document.getElementById('prevBtn')
 const next = document.getElementById('nextBtn')
 
+const formBtn = document.getElementById('form-btn')
+const destinationList = document.getElementById('destination-list')
+const destinationListItem = document.querySelectorAll('[id = destination-list-item]')
+const destinationPlace = document.getElementById('destination-place')
+
 prev.addEventListener('click', () => {
     prevSlide()
 })
@@ -49,3 +54,21 @@ downArrow.addEventListener('click', () => {
 leftArrow.addEventListener('click', () => {
     sideBar.style.display = 'none'
 })
+
+formBtn.addEventListener('click',()=>{
+    destinationList.style.display = "block"
+})
+
+window.addEventListener('click',(e)=>{
+    if(!e.target.matches('.overlay')){
+        destinationList.style.display = "none"
+    }
+})
+for (let i = 0; i < destinationListItem.length; i++) {
+    destinationListItem[i].addEventListener('click',(e)=>{
+        destinationPlace.innerHTML = e.currentTarget.innerHTML
+    })
+}
+
+
+

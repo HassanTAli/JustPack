@@ -22,7 +22,6 @@ header {
   background-image: url('../images/homepage_bg_img.png');
   background-size: cover;
   background-position: center;
-  text-align: center;
   background-repeat: no-repeat;
   width: 100%;
   display: inline-block;
@@ -106,6 +105,7 @@ header {
 .title {
   margin-top: 5em;
   color: white;
+  text-align: center;
 }
 .title p {
   margin-top: 0.25rem;
@@ -113,36 +113,65 @@ header {
 
 /* checkout */
 
-.checkout-from {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 3em;
-}
-.checkout {
-  width: 25%;
-  border-radius: 15px;
-  opacity: 80%;
-  background-color: #e4efee;
-  padding: 1rem;
-}
-.checkout-btn {
+.fowm-section {
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: space-evenly;
+  padding: 3rem 0;
 }
-.search-btn {
-  margin: 2rem;
-  color: white;
-  background-color: #009394;
+.dropdown-desen {
+  position: absolute;
+  background-color: #e6f0ef;
+  margin: 15px 0 0 0;
+  padding: 10px;
+  width: 18.5%;
+  border-radius: 15px;
+  display: none;
+}
+.dropdown-desen ul li {
+  padding: 5px;
+  list-style: none;
+  background-color: white;
+  margin: 10px;
+  border-radius: 15px;
+  box-shadow: 1px 1px 4px #00000042;
+  opacity: 1;
+  font-weight: bold;
+  cursor: pointer;
+}
+.dropdown-desen ul li i {
+  padding: 5px;
+}
+.form-content-text {
+  display: flex;
+}
+.destination {
+  z-index: 1;
+}
+.form-content-text i {
+  margin: auto 15px;
+}
+.people-form-btn {
+  width: 100%;
   border: none;
-  padding: 0.5rem 2rem;
-  font-size: larger;
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
+  background-color: transparent;
+  padding: auto;
+}
+.form-content {
+  width: 25%;
+  background-color: #e6f0ef;
+  border-radius: 15px;
+  padding: 15px 0;
+  opacity: 0.9;
+}
+.overlay {
+  z-index: 100;
+  width: 20%;
+  height: 4%;
+  position: absolute;
+  padding: 15px 0;
+  margin-top: -14px;
+  cursor: pointer;
 }
 
 /* description */
@@ -152,6 +181,7 @@ header {
   flex-direction: column;
   justify-content: center;
   color: white;
+  text-align: center;
 }
 .description-second-header {
   margin: 0.5rem 0;
