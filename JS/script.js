@@ -7,9 +7,32 @@ const prev = document.getElementById('prevBtn')
 const next = document.getElementById('nextBtn')
 
 const formBtn = document.getElementById('form-btn')
+const guestBtn = document.getElementById('guest-btn')
 const destinationList = document.getElementById('destination-list')
+const guestList = document.getElementById('guest-list')
 const destinationListItem = document.querySelectorAll('[id = destination-list-item]')
 const destinationPlace = document.getElementById('destination-place')
+
+const downArrow = document.getElementById('sidebar-down-arrow')
+const sideBar = document.getElementById('side-bar')
+const leftArrow = document.getElementById('sidebar-left-arrow')
+
+const adultGuest = document.getElementById('adult-guest')
+const adultNumber = document.getElementById('adult-number')
+const minsAdult = document.getElementById('mins-adult')
+const plusAdult = document.getElementById('plus-adult')
+
+let numberOfAduils = 1
+
+minsAdult.addEventListener('click',()=>{
+    numberOfAduils--
+})
+
+adultNumber.innerHTML = numberOfAduils
+
+console.log(numberOfAduils)
+
+adultGuest.innerHTML = adultNumber.innerHTML
 
 prev.addEventListener('click', () => {
     prevSlide()
@@ -44,9 +67,6 @@ const nextSlide = () => {
     updateSlidePosition()
 }
 
-const downArrow = document.getElementById('sidebar-down-arrow')
-const sideBar = document.getElementById('side-bar')
-const leftArrow = document.getElementById('sidebar-left-arrow')
 
 downArrow.addEventListener('click', () => {
     sideBar.style.display = 'block'
@@ -59,11 +79,19 @@ formBtn.addEventListener('click',()=>{
     destinationList.style.display = "block"
 })
 
+guestBtn.addEventListener('click',()=>{
+    guestList.style.display = "block"
+})
+
 window.addEventListener('click',(e)=>{
-    if(!e.target.matches('.overlay')){
+    if(!e.target.matches('.overlay-destination')){
         destinationList.style.display = "none"
     }
+    if(!e.target.matches('.overlay-guests') & !e.target.matches('.dropdown-guests')){
+        guestList.style.display = "none"
+    }
 })
+
 for (let i = 0; i < destinationListItem.length; i++) {
     destinationListItem[i].addEventListener('click',(e)=>{
         destinationPlace.innerHTML = e.currentTarget.innerHTML

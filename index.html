@@ -45,14 +45,14 @@
             <form>
                 <div class="fowm-section container">
                     <div class="form-content destination" id="form-btn">
-                        <div class="overlay"></div>
-                            <div class="form-content-text">
-                                <i class="fas fa-suitcase-rolling fa-2x"></i>
-                                <div class="destination-btn-desc">
-                                    <h3>Destination</h3>
-                                    <p id="destination-place">Where are you going?</p>
-                                </div>
+                        <div class="overlay overlay-destination"></div>
+                        <div class="form-content-text">
+                            <i class="fas fa-suitcase-rolling icon-user fa-2x"></i>
+                            <div class="destination-btn-desc">
+                                <h3>Destination</h3>
+                                <p id="destination-place">Where are you going?</p>
                             </div>
+                        </div>
                         <div class="dropdown-desen" id="destination-list">
                             <ul>
                                 <li id="destination-list-item">Gouna</li>
@@ -61,14 +61,44 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="form-content">
-                        <input type="date" name="date" id="date" class="date-form-btn">
+                    <div class="form-content form-calender">
+                        <div class="form-content-text">
+                            <i class="fas fa-calendar-alt icon-user fa-2x"></i>
+                            <div class="destination-btn-desc">
+                                <h3>Check in - out</h3>
+                                <input type="date" name="date" id="date" class="date-form-btn"> - <input type="date"
+                                    name="date" id="date" class="date-form-btn">
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-content">
-                        <select name="people" id="people" class="people-form-btn">
-                            <option value="chlid">chlid</option>
-                            <option value="Adult">Adult</option>
-                        </select>
+                    <div class="form-content guests" id="guest-btn">
+                        <div class="overlay overlay-guests"></div>
+                        <div class="form-content-text">
+                            <i class="fas fa-users icon-user fa-2x"></i>
+                            <div class="destination-btn-desc">
+                                <h3>Guests</h3>
+                                <p><span id="adult-guest"></span> Adult - <span>0</span> Child</p>
+                            </div>
+                        </div>
+                        <i class="arrow down guest-arrow"></i>
+                        <div class="dropdown-guests" id="guest-list">
+                            <div class="guest-item">
+                                <p>Adult</p>
+                                <div>
+                                    <span class="toggle-guests" id="mins-adult">-</span>
+                                    <span id="adult-number">1</span>
+                                    <span class="toggle-guests" id="plus-adult">+</span>
+                                </div>
+                            </div>
+                            <div class="guest-item">
+                                <p>Child</p>
+                                <div>
+                                    <span class="toggle-guests" id="mins-child">-</span>
+                                    <span id="child-number">0</span>
+                                    <span class="toggle-guests" id="plus-child">+</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </form>

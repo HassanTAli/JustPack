@@ -8,6 +8,7 @@
     url('../font/Roboto/Roboto-Regular.ttf') format('truetype'),
     url('../font/Roboto/Roboto-Thin.ttf') format('truetype');
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -18,6 +19,7 @@
 header {
   padding-bottom: 3rem;
 }
+
 .img-bg {
   background-image: url('../images/homepage_bg_img.png');
   background-size: cover;
@@ -33,10 +35,12 @@ header {
   display: flex;
   justify-content: space-between;
 }
+
 .navbar-container {
   max-width: 95%;
   padding: 1.5rem 2.5rem 0;
 }
+
 .navbar img {
   height: 4em;
 }
@@ -47,40 +51,50 @@ header {
   padding: 3px;
   margin: 0 0 25px 5px;
   cursor: pointer;
-  display:none;
+  display: none;
 }
+
 .down {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
 }
+
 .left {
   transform: rotate(135deg);
   -webkit-transform: rotate(135deg);
 }
+
 .navbar li {
   list-style-type: none;
 }
+
 .navbar nav {
   margin-top: 1rem;
 }
+
 .navbar nav ul {
   display: flex;
   flex-direction: row;
 }
+
 .navbar nav ul li {
   padding: 0.5rem 1rem;
 }
+
 .navbar nav ul li i {
   color: white;
 }
+
 .navbar nav ul li a {
   text-decoration: none;
   color: lightgrey;
   font-size: 1rem;
 }
+
 .navbar nav ul li a:hover {
   color: white;
 }
+
 .active {
   color: white;
   border-bottom: 1px solid white;
@@ -89,10 +103,12 @@ header {
 .end-nav {
   margin-top: 1rem;
 }
+
 .end-nav ul {
   display: flex;
   flex-direction: row;
 }
+
 .end-nav ul li {
   padding: 0.5rem;
   color: white;
@@ -107,6 +123,7 @@ header {
   color: white;
   text-align: center;
 }
+
 .title p {
   margin-top: 0.25rem;
 }
@@ -118,7 +135,9 @@ header {
   flex-direction: row;
   justify-content: space-evenly;
   padding: 3rem 0;
+  color: lightslategrey;
 }
+
 .dropdown-desen {
   position: absolute;
   background-color: #e6f0ef;
@@ -128,6 +147,7 @@ header {
   border-radius: 15px;
   display: none;
 }
+
 .dropdown-desen ul li {
   padding: 5px;
   list-style: none;
@@ -139,24 +159,54 @@ header {
   font-weight: bold;
   cursor: pointer;
 }
+.dropdown-guests {
+  position: absolute;
+  background-color: #e6f0ef;
+  margin: 58px 0 0 0;
+  padding: 10px;
+  width: 18.5%;
+  border: 0.5px solid black;
+  display: none;
+}
+
+.guest-item{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+.guest-item span {
+  padding: 0 5px;
+}
+
+.toggle-guests{
+  cursor: pointer;
+  font-size: 1.3rem;
+}
+
 .dropdown-desen ul li i {
   padding: 5px;
 }
+
 .form-content-text {
   display: flex;
 }
+
 .destination {
   z-index: 1;
 }
-.form-content-text i {
+
+.icon-user {
   margin: auto 15px;
 }
+
 .people-form-btn {
   width: 100%;
   border: none;
   background-color: transparent;
   padding: auto;
 }
+
 .form-content {
   width: 25%;
   background-color: #e6f0ef;
@@ -164,6 +214,18 @@ header {
   padding: 15px 0;
   opacity: 0.9;
 }
+
+.form-calender input {
+  background-color: transparent;
+  border: none;
+  width: 47%;
+  color: lightslategrey;
+}
+
+.form-calender input:focus {
+  outline: none;
+}
+
 .overlay {
   z-index: 100;
   width: 20%;
@@ -172,6 +234,20 @@ header {
   padding: 15px 0;
   margin-top: -14px;
   cursor: pointer;
+}
+
+.guests {
+  display: flex;
+  justify-content: space-between;
+}
+
+.guest-arrow {
+  justify-content: flex-end;
+  display: block;
+  border: solid lightslategrey;
+  border-width: 0 3px 3px 0;
+  margin: 17px 10px 15px 0px;
+  padding: 3px 3px 3px 3px;
 }
 
 /* description */
@@ -183,17 +259,21 @@ header {
   color: white;
   text-align: center;
 }
+
 .description-second-header {
   margin: 0.5rem 0;
 }
+
 .description-paragraph {
   width: 80%;
   text-align: center;
   margin: 0 auto;
 }
+
 .circle {
   margin-top: 1rem;
 }
+
 .circle img {
   background-color: #ffffff;
   padding: 0.5rem;
@@ -214,6 +294,7 @@ header {
   color: #009394;
   padding: 3rem 0;
 }
+
 .bullet {
   background-color: white;
   display: flex;
@@ -221,9 +302,11 @@ header {
   border-top-right-radius: 40px;
   border-bottom-right-radius: 40px;
 }
+
 .banner-text {
   padding: 1rem 2.5rem;
 }
+
 .bullet img {
   background-color: #009394;
   width: 60px;
@@ -236,9 +319,11 @@ header {
   -o-border-radius: 50%;
   margin: 5px 3px;
 }
+
 .inline-block {
   display: inline-block;
 }
+
 .single-title {
   margin: 12px auto;
 }
@@ -254,10 +339,12 @@ header {
   justify-content: space-around;
   align-items: center;
 }
+
 .hotel-slider i {
   color: #e4efee;
   cursor: pointer;
 }
+
 .slide {
   margin: 5px;
   transition: 1s;
@@ -273,109 +360,131 @@ header {
   -ms-border-radius: 30px;
   -o-border-radius: 30px;
 }
+
 .slide .card-img img {
   width: 295px;
   margin: 0 auto 75px;
-  clip-path: polygon(
-    59% 11%,
-    91% 6%,
-    98% 35%,
-    91% 60%,
-    100% 100%,
-    50% 88%,
-    0 100%,
-    4% 56%,
-    0 24%,
-    22% 0
-  );
+  clip-path: polygon(59% 11%,
+      91% 6%,
+      98% 35%,
+      91% 60%,
+      100% 100%,
+      50% 88%,
+      0 100%,
+      4% 56%,
+      0 24%,
+      22% 0);
 }
+
 .slide .card-img-full {
   margin-bottom: 75px;
 }
+
 .slide .card-img-full img {
   width: 295px;
 }
+
 .slide .card-description a {
   text-decoration: none;
   color: black;
   margin: 1rem 0;
 }
+
 .slide .card-description a:hover {
   color: #da680f;
   text-decoration: underline;
 }
+
 .slide .card-description .card-location {
   padding: 5px 0;
   color: grey;
 }
+
 .slide .card-description .card-location p {
   display: inline;
   font-weight: 100;
 }
+
 .slide .card-description .card-location i {
   color: black;
 }
+
 .slide .card-description p {
   font-weight: 100;
   color: grey;
 }
+
 .slide .card-description .card-space {
   margin: 10px auto 25px;
 }
+
 .slide .card-description-article {
   text-align: center;
 }
+
 .slide .card-description-article a {
   text-decoration: none;
   color: black;
 }
+
 .slide .card-description-article a:hover {
   text-decoration: underline;
   color: #da680f;
 }
+
 .slide .card-description-article p {
   margin-top: 25px;
   color: grey;
 }
+
 .card-icons {
   margin-top: 5px;
   display: flex;
   align-items: flex-end;
 }
+
 .card-icons i {
   color: black;
 }
+
 .circle-icon {
   background-color: #ffffff;
   padding: 0.5rem;
   border-radius: 50%;
   box-shadow: 1px 1px 4px #00000042;
 }
+
 .circle-icon i {
   width: 15px;
   height: 15px;
 }
+
 .icon-no {
   padding: 0 1.7rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .slide p {
   font-size: small;
   width: auto;
 }
+
 .displayFlex {
   display: flex;
 }
+
 .slide-item,
 .slide-item-hidden {
   display: none;
 }
+
 .slide-visible {
   display: flex;
-  animation: fadeVisibility 0.5s;
+  animation: fadeVisibility 2.5s;
 }
+
 .carousel-btns {
   display: flex;
   justify-content: space-around;
@@ -387,36 +496,45 @@ header {
   background-color: #36454f;
   padding: 4rem 0;
 }
+
 .footer .contact-description {
   color: #ffffff;
 }
+
 .footer .contact-description nav {
   margin-bottom: 15px;
 }
+
 .footer .contact-description nav ul {
   display: flex;
   list-style-type: none;
 }
+
 .footer .contact-description nav ul li {
   padding-right: 15px;
 }
+
 .footer .contact-description nav ul li a {
   text-decoration: none;
   color: #ffffff;
 }
+
 .footer .contact-description nav ul li a:hover {
   text-decoration: underline;
   color: #da680f;
 }
+
 .social-contact img {
   width: 75px;
   margin: 5px;
 }
+
 .contact {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+
 .side-bar {
   height: 100%;
   position: absolute;
@@ -427,25 +545,32 @@ header {
   width: 300px;
   padding: 20px;
   display: none;
+  z-index: 9999999999;
 }
+
 .side-bar .arrow-sidebar {
   margin: 0 0 30px;
 }
+
 .side-bar a {
   text-decoration: none;
   color: white;
 }
+
 .side-bar hr {
   margin: 25px 0 0 0;
 }
-.side-bar nav ul li{
+
+.side-bar nav ul li {
   padding: 20px 0;
   list-style: none;
 }
+
 @keyframes fadeVisibility {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
     transition: opacity ease-in;
@@ -453,15 +578,18 @@ header {
 }
 
 @media screen and (max-width: 1120px) {
+
   .hotel-slider,
   .slide-item,
   .slide-item-second,
   .contact {
     flex-direction: column;
   }
+
   .contact {
     align-items: center;
   }
+
   .contact .social-contact {
     margin-top: 50px;
   }
@@ -471,14 +599,28 @@ header {
   .navbar nav {
     display: none;
   }
-  .arrow{
+
+  .arrow {
     display: inline-block;
   }
-  .checkout-from {
+
+  .fowm-section {
+    display: flex;
     flex-direction: column;
-    align-items: center;
+    align-content: space-around;
+    flex-wrap: wrap;
   }
-  .checkout-from .checkout {
-    margin: 15px 0;
+
+  .form-content {
+    width: 50%;
+    margin: 25px 0;
+  }
+
+  .dropdown-desen {
+    width: 47.3%
+  }
+
+  .overlay {
+    width: 50%;
   }
 }
