@@ -508,6 +508,35 @@ header {
   justify-content: space-around;
 }
 
+/* service */
+
+.section {
+  background-color: #009394;
+  padding: 4rem 0;
+}
+.service {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+}
+.service-card {
+  margin: auto 2rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.service-card img{
+  width: 150px;
+  margin-bottom: 3rem;
+}
+.service-card p {
+  text-align: center;
+}
+
+/* end service */
+
 /* footer */
 
 .footer {
@@ -640,5 +669,9 @@ header {
 
   .overlay {
     width: 50%;
+  }
+
+  .service{
+    flex-direction: column;
   }
 }
