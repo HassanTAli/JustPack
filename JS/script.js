@@ -22,17 +22,48 @@ const adultNumber = document.getElementById('adult-number')
 const minsAdult = document.getElementById('mins-adult')
 const plusAdult = document.getElementById('plus-adult')
 
+const childGuest = document.getElementById('child-guest')
+const childNumber = document.getElementById('child-number')
+const minsChild = document.getElementById('mins-child')
+const plusChild = document.getElementById('plus-child')
+
 let numberOfAduils = 1
+let numberOfChildren = 0
 
-minsAdult.addEventListener('click',()=>{
+adultGuest.innerHTML = numberOfAduils
+childGuest.innerHTML = numberOfChildren
+
+minsAdult.addEventListener('click', () => {
     numberOfAduils--
+    adultNumber.innerHTML = numberOfAduils
+    adultGuest.innerHTML = adultNumber.innerHTML
+    if (numberOfAduils <= 1) {
+        console.log(numberOfAduils)
+        numberOfAduils = 1
+        adultNumber.innerHTML = numberOfAduils
+        adultGuest.innerHTML = adultNumber.innerHTML
+    }
 })
-
-adultNumber.innerHTML = numberOfAduils
-
-console.log(numberOfAduils)
-
-adultGuest.innerHTML = adultNumber.innerHTML
+plusAdult.addEventListener('click', () => {
+    numberOfAduils++
+    adultNumber.innerHTML = numberOfAduils
+    adultGuest.innerHTML = adultNumber.innerHTML
+})
+minsChild.addEventListener('click', () => {
+    numberOfChildren--
+    childNumber.innerHTML = numberOfChildren
+    childGuest.innerHTML = childNumber.innerHTML
+    if (numberOfChildren <= 0) {
+        numberOfChildren = 0
+        childNumber.innerHTML = numberOfChildren
+        childGuest.innerHTML = childNumber.innerHTML
+    }
+})
+plusChild.addEventListener('click', () => {
+    numberOfChildren++
+    childNumber.innerHTML = numberOfChildren
+    childGuest.innerHTML = childNumber.innerHTML
+})
 
 prev.addEventListener('click', () => {
     prevSlide()
@@ -41,16 +72,16 @@ prev.addEventListener('click', () => {
 next.addEventListener('click', () => {
     nextSlide()
 })
-const updateSlidePosition = () =>{
-    for(let slide of slides) {
+const updateSlidePosition = () => {
+    for (let slide of slides) {
         slide.classList.remove('slide-visible')
         slide.classList.add('slide-item-hidden')
     }
     slides[slidePosition].classList.add('slide-visible')
 }
 const prevSlide = () => {
-    if (slidePosition === 0){
-        slidePosition = totalSlides -1
+    if (slidePosition === 0) {
+        slidePosition = totalSlides - 1
     }
     else {
         slidePosition--
@@ -58,7 +89,7 @@ const prevSlide = () => {
     updateSlidePosition()
 }
 const nextSlide = () => {
-    if (slidePosition === totalSlides - 1){
+    if (slidePosition === totalSlides - 1) {
         slidePosition = 0
     }
     else {
@@ -75,28 +106,39 @@ leftArrow.addEventListener('click', () => {
     sideBar.style.display = 'none'
 })
 
-formBtn.addEventListener('click',()=>{
+formBtn.addEventListener('click', () => {
     destinationList.style.display = "block"
 })
 
-guestBtn.addEventListener('click',()=>{
+guestBtn.addEventListener('click', () => {
     guestList.style.display = "block"
 })
 
-window.addEventListener('click',(e)=>{
-    if(!e.target.matches('.overlay-destination')){
+window.addEventListener('click', (e) => {
+    if (!e.target.matches('.overlay-destination')) {
         destinationList.style.display = "none"
-    }
-    if(!e.target.matches('.overlay-guests') & !e.target.matches('.dropdown-guests')){
-        guestList.style.display = "none"
     }
 })
 
 for (let i = 0; i < destinationListItem.length; i++) {
-    destinationListItem[i].addEventListener('click',(e)=>{
+    destinationListItem[i].addEventListener('click', (e) => {
         destinationPlace.innerHTML = e.currentTarget.innerHTML
     })
 }
 
+function submitForm(event){
+    event.preventDefault();
+  }
 
+document.addEventListener("click", e => {
+    const isDropdownButton = e.target.matches("[data-dropdown-button]")
+    if (!isDropdownButton && e.target.closest("[data-dropdown]") != null) return
 
+    let currentDropdown
+    if (isDropdownButton) {
+        guestList.style.display = "block"
+    }
+    else{
+        guestList.style.display ="none"
+    }
+})

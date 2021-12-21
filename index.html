@@ -42,7 +42,7 @@
                 <h1>Planning your next vacation?</h1>
                 <p>Luxury vacation rentals, exceptional services and memorable experiences.</p>
             </div>
-            <form>
+            <form onsubmit="submitForm(event)">
                 <div class="fowm-section container">
                     <div class="form-content destination" id="form-btn">
                         <div class="overlay overlay-destination"></div>
@@ -66,18 +66,17 @@
                             <i class="fas fa-calendar-alt icon-user fa-2x"></i>
                             <div class="destination-btn-desc">
                                 <h3>Check in - out</h3>
-                                <input type="date" name="date" id="date" class="date-form-btn"> - <input type="date"
-                                    name="date" id="date" class="date-form-btn">
+                                
                             </div>
                         </div>
                     </div>
-                    <div class="form-content guests" id="guest-btn">
-                        <div class="overlay overlay-guests"></div>
+                    <div class="form-content guests" id="guest-btn" data-dropdown>
+                        <div class="overlay overlay-guests" data-dropdown-button></div>
                         <div class="form-content-text">
                             <i class="fas fa-users icon-user fa-2x"></i>
                             <div class="destination-btn-desc">
                                 <h3>Guests</h3>
-                                <p><span id="adult-guest"></span> Adult - <span>0</span> Child</p>
+                                <p><span id="adult-guest"></span> Adult - <span id="child-guest">0</span> Child</p>
                             </div>
                         </div>
                         <i class="arrow down guest-arrow"></i>
@@ -101,6 +100,7 @@
                         </div>
                     </div>
                 </div>
+                <input type="submit" value="Search" class="search-btn" />
             </form>
             <div class="description container">
                 <h2>FORGET THE OLD WAYS</h2>
@@ -652,6 +652,6 @@
             </nav>
         </div>
     </body>
-    <script src="JS/script.js"></script>
+    <script src="JS/script.js" defer></script>
 
 </html>
