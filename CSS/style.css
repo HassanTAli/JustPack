@@ -13,6 +13,7 @@
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
 }
 
 /* header */
@@ -143,7 +144,7 @@ header {
   background-color: #e6f0ef;
   margin: 15px 0 0 0;
   padding: 10px;
-  width: 18.5%;
+  width: 20%;
   border-radius: 15px;
   display: none;
 }
@@ -158,6 +159,7 @@ header {
   opacity: 1;
   font-weight: bold;
   cursor: pointer;
+  font-size: small;
 }
 
 .dropdown-guests {
@@ -165,7 +167,7 @@ header {
   background-color: #e6f0ef;
   margin: 56px 0 0 0;
   padding: 10px;
-  width: 18.5%;
+  width: 20%;
   border: 0.5px solid black;
   display: none;
 }
@@ -232,25 +234,69 @@ header {
   opacity: 0.9;
 }
 
-.form-calender input {
-  background-color: transparent;
-  border: none;
-  width: 47%;
-  color: lightslategrey;
-}
-
-.form-calender input:focus {
-  outline: none;
-}
-
 .overlay {
   z-index: 100;
   width: 20%;
-  height: 4%;
+  height: 10%;
   position: absolute;
   padding: 15px 0;
   margin-top: -14px;
   cursor: pointer;
+}
+.x-small {
+  font-size: x-small;
+}
+
+.date-in-out {
+  font-size: xx-small;
+}
+.dates {
+  display: none;
+  position: absolute;
+  top: 48%;
+  width: 25%;
+  background-color: #fff;
+}
+.dates.active-dates {
+  display: block;
+}
+.month {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #eee;
+}
+.month .arrows {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #313131;
+  font-size: 20px;
+  cursor: pointer;
+}
+.month .arrows:hover {
+  background-color: #f3f3f3;
+}
+.month .arrows:active {
+  background-color: #00ca85;
+}
+.dates .days {
+  height: 200px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+.dates .days .day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #313131;
+  cursor: pointer;
+}
+
+.dates .days .day.selected {
+  background-color: #00ca85;
 }
 
 .guests {
@@ -334,7 +380,7 @@ header {
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
-  margin: 5px 3px;
+  margin: 8px 3px;
 }
 
 .inline-block {
@@ -342,7 +388,7 @@ header {
 }
 
 .single-title {
-  margin: 12px auto;
+  margin: 7px auto;
 }
 
 /* slider */
@@ -379,19 +425,21 @@ header {
 }
 
 .slide .card-img img {
-  width: 295px;
+  width: 100%;
   height: 250px;
   margin: 0 auto 75px;
-  clip-path: polygon(59% 11%,
-      91% 6%,
-      98% 35%,
-      91% 60%,
-      100% 100%,
-      50% 88%,
-      0 100%,
-      4% 56%,
-      0 24%,
-      22% 0);
+  clip-path: polygon(
+    59% 11%,
+    91% 6%,
+    98% 35%,
+    91% 60%,
+    100% 100%,
+    50% 88%,
+    0 100%,
+    4% 56%,
+    0 24%,
+    22% 0
+  );
 }
 
 .slide .card-img-full {
@@ -399,7 +447,7 @@ header {
 }
 
 .slide .card-img-full img {
-  width: 295px;
+  width: 100%;
 }
 
 .slide .card-description a {
@@ -478,7 +526,7 @@ header {
 }
 
 .icon-no {
-  padding: 0 1.7rem;
+  padding: 0 1.3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -521,13 +569,13 @@ header {
   margin: auto;
 }
 .service-card {
-  margin: auto 2rem;
+  margin: auto 1rem;
   padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.service-card img{
+.service-card img {
   width: 150px;
   margin-bottom: 3rem;
 }
@@ -587,8 +635,8 @@ header {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #36454F;
-  color: #66AAFF;
+  background-color: #36454f;
+  color: #66aaff;
   width: 300px;
   padding: 20px;
   display: none;
@@ -625,7 +673,6 @@ header {
 }
 
 @media screen and (max-width: 1120px) {
-
   .hotel-slider,
   .slide-item,
   .slide-item-second,
@@ -651,6 +698,11 @@ header {
     display: inline-block;
   }
 
+  .dropdown-desen,
+  .dropdown-guests {
+    width: 40%;
+  }
+
   .fowm-section {
     display: flex;
     flex-direction: column;
@@ -663,15 +715,12 @@ header {
     margin: 25px 0;
   }
 
-  .dropdown-desen {
-    width: 47.3%
-  }
-
   .overlay {
-    width: 50%;
+    width: 40%;
+    height: 8.5%;
   }
 
-  .service{
+  .service {
     flex-direction: column;
   }
 }
