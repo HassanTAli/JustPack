@@ -60,7 +60,7 @@ header {
   -webkit-transform: rotate(45deg);
 }
 
-.left {
+.left-arrow {
   transform: rotate(135deg);
   -webkit-transform: rotate(135deg);
 }
@@ -185,6 +185,7 @@ header {
   border-radius: 15px;
   color: white;
   margin-bottom: 2rem;
+  cursor: pointer;
 }
 
 .guest-item {
@@ -250,53 +251,14 @@ header {
 .date-in-out {
   font-size: xx-small;
 }
-.dates {
-  display: none;
-  position: absolute;
-  top: 48%;
-  width: 25%;
-  background-color: #fff;
-}
-.dates.active-dates {
-  display: block;
-}
-.month {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: 2px solid #eee;
-}
-.month .arrows {
-  width: 35px;
-  height: 35px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #313131;
-  font-size: 20px;
-  cursor: pointer;
-}
-.month .arrows:hover {
-  background-color: #f3f3f3;
-}
-.month .arrows:active {
-  background-color: #00ca85;
-}
-.dates .days {
-  height: 200px;
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-}
-.dates .days .day {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #313131;
-  cursor: pointer;
-}
 
-.dates .days .day.selected {
-  background-color: #00ca85;
+.datarange {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.datarange:focus {
+  outline: none;
 }
 
 .guests {

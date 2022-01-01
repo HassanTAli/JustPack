@@ -27,27 +27,7 @@ const childNumber = document.getElementById('child-number')
 const minsChild = document.getElementById('mins-child')
 const plusChild = document.getElementById('plus-child')
 
-const calender = document.querySelector('.overlay-calender')
-const selectedDateElement = document.querySelector('.selected-date-element')
-const datesElements = document.querySelector('.dates')
-const mthElement = document.querySelector('.month .mth')
-// const mthNextElement = document.querySelector('.month .mth-next')
-const nextMth = document.querySelector('.next-mth')
-const prevMth = document.querySelector('.prev-mth')
-const daysElements = document.querySelector('.days')
 
-const months = ['Jan', 'Feb', 'Mar', 'April', 'May', 'July', 'June', 'Aug',
-    'Sep', 'Oct', 'Nov', 'Dec']
-
-let date = new Date()
-let day = date.getDate()
-let month = date.getMonth()
-let year = date.getFullYear()
-
-let selectedDate = date
-let selectedDay = day
-let selectedMonth = month
-let selectedYear = year
 
 let numberOfAduils = 1
 let numberOfChildren = 0
@@ -166,96 +146,10 @@ document.addEventListener("click", e => {
 })
 
 
-mthElement.textContent = months[month] + ' ' + year
-
-populateDates()
-
-// Event Listener
-calender.addEventListener('click', toggleDatePicker)
-nextMth.addEventListener('click', goToNextMonth)
-prevMth.addEventListener('click', goToPrevMonth)
-
-// FUNCTIONS
-function toggleDatePicker(e) {
-    datesElements.classList.toggle('active-dates')
-}
-function populateDates(e) {
-
-    daysElements.innerHTML = ''
-    let amountDays = 31
-
-    if (month == 1) {
-        amountDays = 28
-    }
-
-    for (let i = 0; i < amountDays; i++) {
-        const dayElement = document.createElement('div')
-        dayElement.classList.add('day')
-        dayElement.textContent = i + 1
-
-        if (selectedDay == (i + 1) && selectedYear == year && selectedMonth == month) {
-            dayElement.classList.add('selected')
-        }
-
-
-        dayElement.addEventListener('click', () => {
-            selectedDate = new Date(year + ' / ' + (month + 1) + ' / ' + (i + 1))
-            selectedDay = i + 1
-            selectedMonth = month
-            selectedYear = year
-
-            selectedDateElement.textContent = formatDate(selectedDate)
-            selectedDateElement.dataset.value = selectedDate
-
-            populateDates()
-        })
-
-        daysElements.appendChild(dayElement)
-    }
-}
-function goToNextMonth(e) {
-    month++
-    if (month > 11) {
-        month = 0
-        year++
-    }
-    mthElement.textContent = months[month] + ' ' + year
-    populateDates()
-}
-function goToPrevMonth(e) {
-    month--
-    if (month < 0) {
-        month = 11
-        year--
-    }
-    mthElement.textContent = months[month] + ' ' + year
-    populateDates()
-}
-
-
-
-// HELPER FUNCTIONS
-function checkEventPathForClass(path, selector) {
-    for (let i = 0; i < path.length; i++) {
-        if (path[i].classList && path[i].classList.contains(selector)) {
-            return true
-        }
-    }
-    return false
-}
-
-function formatDate(d) {
-    let day = d.getDate()
-    if (day < 10) {
-        day = '0' + day
-    }
-
-    let month = d.getMonth()
-    if (month < 10) {
-        month = '0' + month
-    }
-
-    let year = d.getFullYear()
-
-    return day + ' / ' + ++month + ' / ' + year
-}
+$(function () {
+    $('input[name="daterange"]').daterangepicker({
+        opens: 'left'
+    }, function (start, end, label) {
+        console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+    });
+});
